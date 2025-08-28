@@ -107,16 +107,8 @@ The OSI model is a 7-layer framework that standardizes how network communication
 
 DNS translates human-readable domain names (like `google.com`) into IP addresses that computers use. It's like the internet's phonebook.
 
-### How DNS Works (8-Step Process)
+### How DNS Works
 ![dns work](./images/dns-work.png)
-1. **User types** `example.com` in browser
-2. **DNS resolver** receives the query
-3. **Root server** responds with TLD server address
-4. **TLD server** (`.com`) provides authoritative nameserver
-5. **Authoritative nameserver** returns the IP address
-6. **Resolver caches** and returns IP to browser
-7. **Browser connects** to the IP address
-8. **Website loads**
 
 ### DNS Server Types
 
