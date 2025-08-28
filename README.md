@@ -209,163 +209,163 @@ Load balancers can be deployed at three key layers:
 - Between web servers and internal platform layer (application servers/cache servers)
 - Between internal platform layer and database
 
-## Uses of Load Balancing
+### `Uses of Load Balancing`
 
-### Performance Improvement
+- **Performance Improvement**
 Distributes incoming web traffic among multiple servers, reducing individual server load and ensuring faster response times. This is particularly valuable during traffic spikes like holiday sales or viral content.
 
-### High Availability and Reliability
+- **High Availability and Reliability**
 Prevents single points of failure by redirecting traffic to healthy servers when others fail or experience issues. Critical for maintaining uptime in mission-critical applications.
 
-### Scalability
+- **Scalability**
 Enables easy infrastructure scaling by adding servers to the load balancing pool without significant infrastructure changes. Organizations can grow seamlessly as demand increases.
 
-### Redundancy
+- **Redundancy**
 Maintains multiple copies of data and services across servers, reducing risk of data loss or service outages due to hardware failures.
 
-### Network Optimization
+- **Network Optimization**
 Distributes traffic across multiple network paths or links, reducing congestion and improving overall network performance.
 
-### Geographic Distribution
+- **Geographic Distribution**
 Directs users to nearest or best-performing data centers based on location, reducing latency and improving user experience for global applications.
 
-### Application Performance
+- **Application Performance**
 Assigns dedicated resources to specific applications or services, ensuring optimal performance without interference between different services.
 
-### Security Benefits
+- **Security Benefits**
 Helps protect against DDoS attacks by distributing malicious traffic across multiple servers, making it harder for attackers to overwhelm a single target.
 
-### Cost Optimization
+- **Cost Optimization**
 Improves resource efficiency, potentially reducing hardware and infrastructure costs while minimizing energy consumption.
 
-### Content Caching
+- **Content Caching**
 Some load balancers cache static content like images and videos, serving them directly and reducing server demand while improving response times.
 
-## 3. Load Balancer Types
+### `Load Balancer Types`
 
-### Hardware Load Balancing
-Physical devices using specialized components (ASICs or FPGAs) for high-performance traffic distribution.
+- **Hardware Load Balancing**
+        Physical devices using specialized components (ASICs or FPGAs) for high-performance traffic distribution.
+        
+        **Pros**: High performance, built-in security features, handles large traffic volumes
+        
+        **Cons**: Expensive, requires specialized knowledge, limited scalability
+        
+        **Use Case**: Large enterprises with high-traffic requirements
 
-**Pros**: High performance, built-in security features, handles large traffic volumes
+- **Software Load Balancing**
+        Applications running on general-purpose servers or virtual machines using software algorithms for traffic distribution.
+        
+        **Pros**: More affordable, easily scalable, flexible deployment options
+        
+        **Cons**: Lower performance under heavy loads, consumes host resources, requires maintenance
+        
+        **Use Case**: Startups and growing businesses with cloud infrastructure
+        
+- **Cloud-based Load Balancing**
+        Services provided by cloud providers as part of their infrastructure offerings.
+        
+        **Pros**: Highly scalable, simplified management, pay-as-you-use pricing
+        
+        **Cons**: Vendor dependency, less control over configuration, potential vendor lock-in
+        
+        **Use Case**: Applications built on cloud platforms
 
-**Cons**: Expensive, requires specialized knowledge, limited scalability
+- **DNS Load Balancing**
+        Uses DNS infrastructure to resolve domain names to multiple IP addresses, distributing traffic at the DNS level.
+        
+        **Pros**: Simple implementation, geographic distribution capability
+        
+        **Cons**: Slow DNS updates, no server health consideration, limited session persistence
+        
+        **Use Case**: Content delivery networks and geographic distribution
 
-**Use Case**: Large enterprises with high-traffic requirements
+- **Global Server Load Balancing (GSLB)**
+        Distributes traffic across geographically dispersed data centers with advanced features like health checks and custom routing.
+        
+        **Pros**: Multi-datacenter failover, improved global performance, advanced routing features
+        
+        **Cons**: Complex setup, may require specialized hardware, DNS limitations
+        
+        **Use Case**: Multinational corporations with global infrastructure
 
-### Software Load Balancing
-Applications running on general-purpose servers or virtual machines using software algorithms for traffic distribution.
+- **Hybrid Load Balancing**
+        Combines multiple load balancing techniques for optimal performance, scalability, and reliability.
+        
+        **Pros**: High flexibility, leverages strengths of different techniques, adaptable strategy
+        
+        **Cons**: Complex management, requires expertise in multiple techniques, higher costs
+        
+        **Use Case**: Large-scale platforms requiring comprehensive load balancing solutions
 
-**Pros**: More affordable, easily scalable, flexible deployment options
+- **Layer 4 Load Balancing**
+        Operates at the transport layer using TCP/UDP header information like IP addresses and port numbers.
+        
+        **Pros**: Fast and efficient, handles various protocols, simple implementation
+        
+        **Cons**: No application-level awareness, limited session persistence
+        
+        **Use Case**: Gaming platforms and protocol-agnostic applications
+        
+- **Layer 7 Load Balancing**
+        Operates at the application layer using HTTP headers, cookies, and URL paths for intelligent routing decisions.
+        
+        **Pros**: Application-aware routing, supports advanced features, fine-grained control
+        
+        **Cons**: Higher resource consumption, more complex setup, slower than Layer 4
+        
+        **Use Case**: Web applications with microservices requiring content-based routing
 
-**Cons**: Lower performance under heavy loads, consumes host resources, requires maintenance
+### `Load Balancing Algorithms`
 
-**Use Case**: Startups and growing businesses with cloud infrastructure
+- **Round Robin**
+        Distributes requests in cyclic order, moving sequentially through servers and returning to the first after reaching the last.
+        
+        **Pros**: Equal distribution, easy implementation, works well with similar server capacities
+        
+        **Cons**: No load awareness, no session affinity, poor performance with different capacities
+        
+        **Use Case**: Homogeneous environments with stateless applications
 
-### Cloud-based Load Balancing
-Services provided by cloud providers as part of their infrastructure offerings.
+- **Least Connections**
+        Assigns requests to the server with the fewest active connections at request time.
+        
+        **Pros**: Load awareness, dynamic distribution, efficient for heterogeneous environments
+        
+        **Cons**: Higher complexity, requires state maintenance, potential connection spikes
+        
+        **Use Case**: Variable traffic patterns and stateful applications
 
-**Pros**: Highly scalable, simplified management, pay-as-you-use pricing
-
-**Cons**: Vendor dependency, less control over configuration, potential vendor lock-in
-
-**Use Case**: Applications built on cloud platforms
-
-### DNS Load Balancing
-Uses DNS infrastructure to resolve domain names to multiple IP addresses, distributing traffic at the DNS level.
-
-**Pros**: Simple implementation, geographic distribution capability
-
-**Cons**: Slow DNS updates, no server health consideration, limited session persistence
-
-**Use Case**: Content delivery networks and geographic distribution
-
-### Global Server Load Balancing (GSLB)
-Distributes traffic across geographically dispersed data centers with advanced features like health checks and custom routing.
-
-**Pros**: Multi-datacenter failover, improved global performance, advanced routing features
-
-**Cons**: Complex setup, may require specialized hardware, DNS limitations
-
-**Use Case**: Multinational corporations with global infrastructure
-
-### Hybrid Load Balancing
-Combines multiple load balancing techniques for optimal performance, scalability, and reliability.
-
-**Pros**: High flexibility, leverages strengths of different techniques, adaptable strategy
-
-**Cons**: Complex management, requires expertise in multiple techniques, higher costs
-
-**Use Case**: Large-scale platforms requiring comprehensive load balancing solutions
-
-### Layer 4 Load Balancing
-Operates at the transport layer using TCP/UDP header information like IP addresses and port numbers.
-
-**Pros**: Fast and efficient, handles various protocols, simple implementation
-
-**Cons**: No application-level awareness, limited session persistence
-
-**Use Case**: Gaming platforms and protocol-agnostic applications
-
-### Layer 7 Load Balancing
-Operates at the application layer using HTTP headers, cookies, and URL paths for intelligent routing decisions.
-
-**Pros**: Application-aware routing, supports advanced features, fine-grained control
-
-**Cons**: Higher resource consumption, more complex setup, slower than Layer 4
-
-**Use Case**: Web applications with microservices requiring content-based routing
-
-## 4. Load Balancing Algorithms
-
-### Round Robin
-Distributes requests in cyclic order, moving sequentially through servers and returning to the first after reaching the last.
-
-**Pros**: Equal distribution, easy implementation, works well with similar server capacities
-
-**Cons**: No load awareness, no session affinity, poor performance with different capacities
-
-**Use Case**: Homogeneous environments with stateless applications
-
-### Least Connections
-Assigns requests to the server with the fewest active connections at request time.
-
-**Pros**: Load awareness, dynamic distribution, efficient for heterogeneous environments
-
-**Cons**: Higher complexity, requires state maintenance, potential connection spikes
-
-**Use Case**: Variable traffic patterns and stateful applications
-
-### Weighted Round Robin
-Enhanced Round Robin that assigns weights based on server capacity, distributing requests proportionally.
-
-**Pros**: Capacity-based distribution, flexible weight adjustment, improved performance
-
-**Cons**: Complex weight assignment, increased overhead, not ideal for variable loads
-
-**Use Case**: Heterogeneous server environments with known capacity differences
-
-
-### Weighted Least Connections
-Combines Least Connections with server weights, considering both active connections and server capacity.
-
-**Pros**: Dynamic and capacity-aware, handles heterogeneous environments, flexible
-
-**Cons**: High complexity, requires state and weight maintenance, challenging weight assignment
-
-**Use Case**: High-traffic applications with servers of varying capacities
+- **Weighted Round Robin**
+        Enhanced Round Robin that assigns weights based on server capacity, distributing requests proportionally.
+        
+        **Pros**: Capacity-based distribution, flexible weight adjustment, improved performance
+        
+        **Cons**: Complex weight assignment, increased overhead, not ideal for variable loads
+        
+        **Use Case**: Heterogeneous server environments with known capacity differences
 
 
-### IP Hash
-Routes requests based on client IP address hash, ensuring consistent server assignment for the same client.
+- **Weighted Least Connections`**
+        Combines Least Connections with server weights, considering both active connections and server capacity.
+        
+        **Pros**: Dynamic and capacity-aware, handles heterogeneous environments, flexible
+        
+        **Cons**: High complexity, requires state and weight maintenance, challenging weight assignment
+        
+        **Use Case**: High-traffic applications with servers of varying capacities
 
-**Pros**: Session persistence, simple implementation, deterministic routing
 
-**Cons**: Uneven distribution, disrupted by server changes, limited flexibility
-
-**Use Case**: Stateful applications requiring session persistence
-
-
-### Least Response Time
+- **IP Hash**
+        Routes requests based on client IP address hash, ensuring consistent server assignment for the same client.
+        
+        **Pros**: Session persistence, simple implementation, deterministic routing
+        
+        **Cons**: Uneven distribution, disrupted by server changes, limited flexibility
+        
+        **Use Case**: Stateful applications requiring session persistence
+        
+        
+- **Least Response Time**
 Assigns requests to the server with the lowest response time based on recent performance metrics.
 
 **Pros**: Optimized performance, dynamic adjustment, effective resource utilization
@@ -374,7 +374,7 @@ Assigns requests to the server with the lowest response time based on recent per
 
 **Use Case**: Real-time applications requiring low latency
 
-### Random
+- ** Random**
 Selects servers randomly for each request without considering server state or performance.
 
 **Pros**: Simple implementation, no state maintenance, uniform long-term distribution
@@ -383,7 +383,7 @@ Selects servers randomly for each request without considering server state or pe
 
 **Use Case**: Simple deployments with homogeneous servers
 
-### Least Bandwidth
+- **Least Bandwidth**
 Routes requests to the server consuming the least bandwidth at request time.
 
 **Pros**: Dynamic bandwidth balancing, prevents overloading, efficient resource utilization
@@ -392,7 +392,7 @@ Routes requests to the server consuming the least bandwidth at request time.
 
 **Use Case**: High-bandwidth applications like video streaming
 
-### Custom Load
+- **Custom Load**
 Flexible approach allowing custom metrics and rules for traffic distribution based on specific application requirements.
 
 **Pros**: Highly flexible, optimized resource utilization, adaptable to requirements
