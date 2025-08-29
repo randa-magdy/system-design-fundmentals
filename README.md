@@ -436,6 +436,8 @@ Some load balancers cache static content like images and videos, serving them di
     
 ### `Stateless vs. Stateful Load Balancing`
 
+![Stateful vs Stateless](./images/load-balancer/stateful-stateless.png)
+
 - **Stateless Load Balancing**
   
     Operates without maintaining client session or connection state information. Makes routing decisions based solely on incoming request data like IP address or URL.
