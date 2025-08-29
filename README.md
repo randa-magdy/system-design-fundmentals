@@ -68,7 +68,7 @@ The OSI model is a 7-layer framework that standardizes how network communication
 
 ### `TCP vs UDP (Transport Protocols)`
 
-- TCP (Transmission Control Protocol)
+- **TCP (Transmission Control Protocol)**
     - **Connection-oriented**: Establishes a connection before sending data
     - **Reliable**: Guarantees data delivery and correct order
     - **Error checking**: Retransmits lost packets
@@ -76,7 +76,7 @@ The OSI model is a 7-layer framework that standardizes how network communication
 
     **Use Cases**: Web browsing (HTTP/HTTPS), email (SMTP), file transfer (FTP)
 
-- UDP (User Datagram Protocol)
+- **UDP (User Datagram Protocol)**
     - **Connectionless**: Sends data without establishing a connection
     - **Fast**: Minimal overhead
     - **No guarantees**: No delivery confirmation or error correction
