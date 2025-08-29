@@ -464,27 +464,27 @@ Some load balancers cache static content like images and videos, serving them di
 
 ### `Scalability and Performance`
 
-### Scaling Strategie
+- **Scaling Strategie**
 
-**Horizontal Scaling**: Adding more load balancer instances to distribute traffic among them
-- Effective for active-active configurations
-- Achieved through DNS load balancing or additional load balancer layers
+    **Horizontal Scaling**: Adding more load balancer instances to distribute traffic among them
+    - Effective for active-active configurations
+    - Achieved through DNS load balancing or additional load balancer layers
+    
+    **Vertical Scaling**: Increasing resources (CPU, memory, network capacity) of existing instances
+    - Often limited by maximum single-instance capacity
+    - Horizontal scaling typically preferred for large-scale applications
 
-**Vertical Scaling**: Increasing resources (CPU, memory, network capacity) of existing instances
-- Often limited by maximum single-instance capacity
-- Horizontal scaling typically preferred for large-scale applications
+- **Performance Optimization**
 
-### Performance Optimization
-
-**Connection and Request Rate Limits**: Managing connection numbers and request rates to prevent overloading and ensure consistent performance. Can be based on IP addresses, domains, or URL patterns.
-
-**Caching and Content Optimization**: Load balancers can cache static content (such as images, CSS, and JavaScript files) and support compression/minification to reduce backend load and improve response times.
-
-**Latency Considerations**: While load balancers add network hops, impact can be minimized through:
-- Geographic distribution of load balancers and servers
-- Connection reuse and keep-alive connections
-- Protocol optimizations like HTTP/2 or QUIC
-
+    **Connection and Request Rate Limits**: Managing connection numbers and request rates to prevent overloading and ensure consistent performance. Can be based on IP addresses, domains, or URL patterns.
+    
+    **Caching and Content Optimization**: Load balancers can cache static content (such as images, CSS, and JavaScript files) and support compression/minification to reduce backend load and improve response times.
+    
+    **Latency Considerations**: While load balancers add network hops, impact can be minimized through:
+    - Geographic distribution of load balancers and servers
+    - Connection reuse and keep-alive connections
+    - Protocol optimizations like HTTP/2 or QUIC
+    
 ### `High Availability and Fault Tolerance`
 
 **Redundancy Strategies**:
