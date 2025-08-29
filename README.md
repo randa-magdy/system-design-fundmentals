@@ -244,13 +244,13 @@ Some load balancers cache static content like images and videos, serving them di
 ### `Load Balancer Types`
 
 - **Hardware Load Balancing**
-        Physical devices using specialized components (ASICs or FPGAs) for high-performance traffic distribution.
-        
-        **Pros**: High performance, built-in security features, handles large traffic volumes
-        
-        **Cons**: Expensive, requires specialized knowledge, limited scalability
-        
-        **Use Case**: Large enterprises with high-traffic requirements
+    Physical devices using specialized components (ASICs or FPGAs) for high-performance traffic distribution.
+    
+    **Pros**: High performance, built-in security features, handles large traffic volumes
+    
+    **Cons**: Expensive, requires specialized knowledge, limited scalability
+    
+    **Use Case**: Large enterprises with high-traffic requirements
 
 - **Software Load Balancing**
         Applications running on general-purpose servers or virtual machines using software algorithms for traffic distribution.
