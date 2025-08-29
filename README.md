@@ -185,7 +185,7 @@ DNS translates human-readable domain names (like `google.com`) into IP addresses
 
 Load balancing is a crucial component of system design that distributes workloads evenly across multiple computing resources to optimize resource utilization, minimize response time, and maximize throughput. A load balancer acts as an intermediary that sits between clients and servers, accepting incoming network and application traffic and distributing it across multiple backend servers using various algorithms.
 
-![load balancer](./images/load-balancer/load-balancer-intro.png)
+![load balancer](./images/load-balancer/load-balancer-intro.webp)
 
 ### `Key Terminology and Concepts`
 
