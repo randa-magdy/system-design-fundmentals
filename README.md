@@ -523,7 +523,7 @@ Some load balancers cache static content like images and videos, serving them di
     
 - **Sticky Sessions Challenge**
 
-      Session persistence can lead to uneven load distribution.
+    Session persistence can lead to uneven load distribution.
     
     **Remedy**: Balance session persistence needs with traffic distribution or reduce session dependence
 
